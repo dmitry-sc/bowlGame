@@ -1,0 +1,16 @@
+<configuration>
+    <include  resource="base.xml" />
+    <logger   name="org.springframework.web" level="WARN"/>
+    <property name="root.level.console" value="OFF" />
+    <!-- definition of appender STDOUT -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="WARN">
+        <!-- appender referenced after it is defined -->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
